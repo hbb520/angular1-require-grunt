@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登录</title>
+    <link rel="stylesheet" href="assets/libs/bootstrap-v3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/app.css">
+    <style>
+        .sys-title {
+            text-align: center;
+            color: #fff;
+            margin-bottom: 50px;
+        }
+
+        .login-form-container {
+            padding-top: 120px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="row">
+    <div class="col-sm-6 col-sm-offset-3">
+        <div class="login-form-container">
+            <h3 class="center-block sys-title">后台管理系统Angular 1.6.4+jquery+require模块化开发</h3>
+            <form name="loginForm" novalidate class="form-horizontal">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">用户名</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control username" placeholder="请输入用户名">
+                        <div class="text-danger usernameErr" style='display: none'> 用户名必须输入！</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">密码</label>
+                    <div class="col-sm-10">
+                        <input type="password" name="password" class="form-control" placeholder="请输入密码" id='userps'>
+                        <div class="text-danger userpsErr" style='display: none'>密码必须输入！</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <div class="text-danger" style='display: none' id="textErr">邮箱或密码错误！</div>
+                        <p>默认账号：ducadmin</p><p>密码：weiruiadmin</p>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-offset-2 col-sm-10">
+                        <input type='button' class="btn btn-success" onclick="doLogin();" value="登录"/>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+<script src="assets/libs/jquery_1_11_1.min.js"></script>
+<script src="assets/libs/jquery.base64.js"></script>
+
+
+<script>
+  $(function () {
+    $(".username").focus(function () {
+      $("#textErr").hide();
+      $(".usernameErr").hide();
+    })
+    $("#userps").focus(function () {
+      $("#textErr").hide();
+      $(".userpsErr").hide();
+    })
+  });
+  function doLogin () {
+    var userName = $(".username").val();
+    var userPs = $("#userps").val();
+    console.log(userName)
+    if (userName == "") {
+      $(".usernameErr").show();
+      return;
+    }
+    if (userPs == "") {
+      $(".userpsErr").show();
+      return;
+    }
+    $.ajax({
+      type: "get",
+      url: "data/user.json",
+      success: function (data, textStatus, jqXHR) {
+        console.log(data);
+        if (data.userName != userName || data.userPs != userPs) {
+          $("#textErr").show();
+        }else{
+          window.location.href="./index.html"
+        }
+      }
+    });
+  }
+
+
+</script>
+
+</body>
+</html>

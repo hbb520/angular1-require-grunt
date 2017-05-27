@@ -1,0 +1,26 @@
+{
+  "name": "ztree",
+  "version": "3.5.24",
+  "description": "jquery tree plugin",
+  "main": "js/jquery.ztree.all.js",
+  "homepage": "http://www.ztree.me/",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uibox/ztree"
+  },
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "http://www.ztree.me/v3/main.php#_license"
+    }
+  ],
+  "keywords": [
+    "tree",
+    "ui"
+  ],
+  "dependencies": {
+    "jquery": ">=1.4.4"
+  },
+  "_from": "ztree@3.5.24",
+  "_resolved": "http://registry.npm.taobao.org/ztree/download/ztree-3.5.24.tgz"
+}
