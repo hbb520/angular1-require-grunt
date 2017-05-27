@@ -1,3 +1,5 @@
+这是一个基于ng1+ui-router+RequireJS+grunt的后台管理系统模板,若果你用ng1开发,那么这份代码希望对你有帮助
+
 技术：
 
 Angular-1.6.4
