@@ -1,0 +1,1 @@
+"use strict";define([],function(){return[{name:"app",url:"",redirectTo:"workspace"},{name:"workspace",url:"/workspace",component:"workspace",authenticate:!0,resolve:{lazyload:["$ocLazyLoad",function($ocLazyLoad){return $ocLazyLoad.load({files:["workspace/workspace-component"],cache:!1}).then(function(){$ocLazyLoad.inject("workspace.module")})}]}}]});

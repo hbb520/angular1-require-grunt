@@ -1,0 +1,1 @@
+"use strict";define(["app.module"],function(){angular.element(function(){angular.bootstrap(document,["myRootModule"])})});
